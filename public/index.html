@@ -2,38 +2,58 @@
 
 <html>
 
-	<head>
-		<title>Clementine.js - The elegant and lightweight full stack JavaScript boilerplate.</title>
+<head>
+	<title>Image Search Abstraction Layer</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+	crossorigin="anonymous">
+	<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+	<div class="container-fluid">
 		
-		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
-	</head>
-
-	<header>
-		<p>Welcome, <span id="display-name"></span>!</p>
-		<a class="menu" href="/profile">Profile</a>
-		<p>|</p>
-		<a class="menu" href="/logout">Logout</a>
-	</header>
-
-	<body>
-		<div class="container">
-			<img src="/public/img/clementine_150.png" />
-			<br />
-			<p class="clementine-text">Clementine.js</p>
-		</div>
+		<h2>Image Search Abstraction Layer</h2>
 	
-		<div class="container">
-			<p>You have clicked the button <span id="click-nbr"></span> times.</p>
-			<br />
-			<div class="btn-container">
-				<button type="submit" class="btn btn-add">CLICK ME!</button>
-				<button class="btn btn-delete">RESET</button>
-			</div>
+		<h4>User Stories</h4>
+	
+		<ol>
+			<li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+			<li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+			<li>I can get a list of the most recently submitted search strings.</li>
+		</ol>
+	
+		<h3>Sample request</h3>
+		<div><code>https://smoore-imagesearch.herokuapp.com/imagesearch/landscape?offset=10</code></div>
+	
+		<h3>Sample results</h3>
+		<div>
+			<code>
+				[<br />
+				&nbsp;&nbsp;{<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;"url": "https://i.ytimg.com/vi/c7oV1T2j5mc/maxresdefault.jpg",<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;"snippet": "Landscape Photography",<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;"thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR3p1jNPx2fv8Zi4S3gGmzidO6yrMFmj_lwZ2Ml9Z1cJpNNTZl3dmqhzm4",<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;"context": "https://www.youtube.com/watch?v=c7oV1T2j5mc"<br />
+				&nbsp;&nbsp;},<br />
+				&nbsp;&nbsp;{<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+				&nbsp;&nbsp;},<br />
+				&nbsp;&nbsp;...<br />
+				]
+			</code>
 		</div>
 		
-		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/clickController.client.js"></script>
-		<script type="text/javascript" src="controllers/userController.client.js"></script>
-	</body>
+		<h3>Other request options</h3>
+		<div><code>...</code></div>
+		
+	</div>
+
+	<!-- <script type="text/javascript" src="common/ajax-functions.js"></script>
+	<script type="text/javascript" src="controllers/clickController.client.js"></script>
+	<script type="text/javascript" src="controllers/userController.client.js"></script> -->
+</body>
 
 </html>
