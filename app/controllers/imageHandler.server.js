@@ -37,7 +37,7 @@ function ImageHandler() {
         } else {
             return res.status('500').send("Invalid search, please try again.");
         }
-        //united states market, strict content filtering
+        //united states market, strict content filtering, 10 results
         getOptions.path += '&mkt=en-us&safeSearch=Strict&count=10';
         //add any optional query parameters
         //handle offset as "pagination"
